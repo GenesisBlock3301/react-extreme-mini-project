@@ -1,0 +1,5 @@
+What is action ?
+
+#Make function in action file
+#Return data and type
+#Add constant and use constant in action

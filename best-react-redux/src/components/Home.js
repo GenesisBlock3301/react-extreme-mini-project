@@ -1,25 +1,36 @@
 import React from 'react'
 
-const Home = ()=>{
-  return(
-      <div>
-          <div>
-              <i className="fas fa-shopping-cart"></i>
-          </div>
-          <h1>Home Component</h1>
-          <div className="cart-wrapper">
-              <div className="image-wrapper item">
-                  <img style={{width:100,height:100}} src="images/photo.jpg" alt=""/>
-              </div>
-              <div className="text-wrapper item">
-                  <span>I-Phone</span>
-                  <span>Price: $1000</span>
-              </div>
-              <div className="btn-wrapper item">
-                  <button>Add To Cart</button>
-              </div>
-          </div>
-      </div>
-  )
-};
-export default Home;
+function Home(props) {
+    console.warn("Home props", props)
+    return (
+        <div>
+
+            <h1>Home Component</h1>
+            <div className="cart-wrapper">
+                <div className="img-wrapper item">
+                    <img src="https://www.fdfproject.com/wp-content/uploads/2018/12/iphone-png.png"/>
+                </div>
+                <div className="text-wrapper item">
+                    <span>
+                        I-Phone
+                    </span>
+                    <span>
+                        Price: $1000.00
+                    </span>
+                </div>
+                <div className="btn-wrapper item">
+                    <button className="btn btn-primary" onClick={
+                        () => props.addToCartHandler({price: 1000,name:'I phone 11'})}>
+                        Add To Cart
+                    </button>
+                    <button className="btn btn-danger" onClick={
+                        () => props.removeToCartHandler({price: 1000,name:'I phone 11'})}>
+                        Remove To Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export default Home
